@@ -12,7 +12,7 @@ export async function GET() {
     ${products.map(product => {
                 return `
       <url>
-        <loc>${product.thumbnailUrl}</loc>
+        <loc>${product.thumbnailUrl.replace("https://via.placeholder.com", process.env.NEXT_PUBLIC_APP_URL || "")}</loc>
         <lastmod>${new Date().toISOString()}</lastmod>
       </url>
     `;
